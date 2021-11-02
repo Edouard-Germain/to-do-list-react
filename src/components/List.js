@@ -7,8 +7,14 @@ class List extends React.Component {
     }
 
     render(){
-        console.log("List props : ", this.props)
-        let taskList = this.props.tasks.map((task, index)=> <li>{task.description} {task.status} <button onClick={this.props.delete}>delete</button></li>)
+        // console.log("List props : ", this.props)
+        let taskList = this.props.tasks.map((task,index)=> 
+            <li key={index}>
+                {task.description} 
+                {task.status} 
+                <button onClick={() => this.props.delete(index)}>delete</button>
+            </li>
+        )
         return(
             <div>
                 <h3> ma liste</h3>
