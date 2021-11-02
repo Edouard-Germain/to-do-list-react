@@ -13,6 +13,7 @@ class List extends React.Component {
                 {task.description} 
                 {task.status} 
                 <button onClick={() => this.props.delete(index)}>delete</button>
+                <button>modifier</button>
             </li>
         )
         return(
