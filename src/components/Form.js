@@ -12,10 +12,11 @@ class Form extends React.Component {
         this.setState({
             task : e.target.value
         })
-        console.log(this.state.task)
+        // console.log(this.state.task)
     }
     handleSubmit =(e)=>{
-        
+        e.preventDefault()
+        this.props.addTask(this.state.task)
         this.setState({
             task : ""
         })
@@ -24,7 +25,7 @@ class Form extends React.Component {
         return(
             <div>
                 <h2>To do list</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input type="text" onChange={this.handleTaskDescriptionChange}></input>
                     <button type="submit" placeholder ="to do list" >to do list</button>
                 </form>
